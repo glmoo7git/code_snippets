@@ -26,8 +26,17 @@ class Employee:
     def from_string(cls, emp_str):
         first, last, pay = emp_str.split('-')
         return cls(first, last, pay)
+    
+    
+#  here so let's say that we wanted
+# a simple function that would take in a
+# date and return whether or not that was
+# a workday so that has a logical
+# connection to our employee class but it
+# doesn't actually depend on any specific
+# instance or class variable so instead 
 
-    @staticmethod
+    @staticmethod                   
     def is_workday(day):
         if day.weekday() == 5 or day.weekday() == 6:
             return False
