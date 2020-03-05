@@ -3,7 +3,9 @@ class Employee:
 
     def __init__(self, first, last):
         self.first = first
-        self.last = last
+        self.last = last    #this is attribute
+        
+#  the property decorator allows us to define a method but we can access it like an attribute 
 
     @property
     def email(self):
