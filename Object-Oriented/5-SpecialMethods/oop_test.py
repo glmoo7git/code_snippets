@@ -1,3 +1,6 @@
+# special methods we'll be able to change some of this built-in behavior 
+# and operations so these special methods are always surrounded by double underscores
+# so a lot of people call these double underscores dunder 
 
 class Employee:
 
