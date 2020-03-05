@@ -14,13 +14,13 @@ class Employee:
 
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amt)
+    
 
-
-class Developer(Employee):
-    raise_amt = 1.10
-
-    def __init__(self, first, last, pay, prog_lang):
-        super().__init__(first, last, pay)
+class Developer(Employee):                           # even without any code of its own the developer class will have all of the
+    raise_amt = 1.10                                 # attributes and methods of our employee class
+    
+    def __init__(self, first, last, pay, prog_lang):   # super.__init__ is going to pass first, last and pay to our 
+        super().__init__(first, last, pay)             # employees and __init__ method and let that class handle those arguments
         self.prog_lang = prog_lang
 
 
@@ -57,3 +57,26 @@ mgr_1.add_emp(dev_2)
 mgr_1.remove_emp(dev_2)
 
 mgr_1.print_emps()
+
+# python has these two built-in functions called is instance and 
+# is subclass so is instance will tell us if an object is an instance of a class so for example 
+
+print(isintance(mgr_1,manager))      # if I need to print this out I can print out whether manager one is an instance of manager
+                                    # and if I print that out you can see that  it prints true now
+print(isintance(mgr_1,Employee))    # if I was to check whether the manager is an instance of an employee then you can see that is also true
+
+print(isintance(mgr_1,Developer))   # but if I check if manager one is an instance of a developer then thatreturns false
+                                    # because even though developer and manager both inherit from employee 
+                                    # they aren't part of each other's inheritance
+        
+# issubclass will tell us if a class is a subclass of another 
+
+print(issubclass(Developer, Employee))  # is developer a subclass of employee that it returns true
+
+print(issubclass(Maneger, Employee))    # is manager a subclass of employee that returns true also
+ 
+print(issubclass(Maneger, Developer))  #  is manager a subclass of developer then that will return false
+
+
+
+
